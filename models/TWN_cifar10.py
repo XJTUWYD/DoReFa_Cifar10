@@ -1,0 +1,33 @@
+from nnUtils_for_TWN  import *
+
+model = Sequential([
+    Tenary_Weight_Only(128,3,3,1,1, padding='VALID', bias=False),
+    BatchNormalization(),
+    HardTanh(),
+    Tenary_Weight_Only(128,3,3, padding='SAME', bias=False),
+    SpatialMaxPooling(2,2,2,2),
+    BatchNormalization(),
+    HardTanh(),
+    Tenary_Weight_Only(256,3,3, padding='SAME', bias=False),
+    BatchNormalization(),
+    HardTanh(),
+    Tenary_Weight_Only(256,3,3, padding='SAME', bias=False),
+    SpatialMaxPooling(2,2,2,2),
+    BatchNormalization(),
+    HardTanh(),
+    Tenary_Weight_Only(512,3,3, padding='SAME', bias=False),
+    BatchNormalization(),
+    HardTanh(),
+    Tenary_Weight_Only(512,3,3, padding='SAME', bias=False),
+    SpatialMaxPooling(2,2,2,2),
+    BatchNormalization(),
+    HardTanh(),
+    TernayWeightOnlyAffine(1024, bias=False),
+    BatchNormalization(),
+    HardTanh(),
+    TernayWeightOnlyAffine(1024, bias=False),
+    BatchNormalization(),
+    HardTanh(),
+    TernayWeightOnlyAffine(10),
+    BatchNormalization()
+])

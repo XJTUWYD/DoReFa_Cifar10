@@ -1,0 +1,33 @@
+from nnUtils_for_DoReFaNet  import *
+
+model = Sequential([
+    DoReFa_Convolution_w(128,3,3,1,1, padding='VALID', bias=False),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Convolution(128,3,3, padding='SAME', bias=False),
+    SpatialMaxPooling(2,2,2,2),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Convolution(256,3,3, padding='SAME', bias=False),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Convolution(256,3,3, padding='SAME', bias=False),
+    SpatialMaxPooling(2,2,2,2),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Convolution(512,3,3, padding='SAME', bias=False),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Convolution(512,3,3, padding='SAME', bias=False),
+    SpatialMaxPooling(2,2,2,2),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Affine(1024, bias=False),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Affine(1024, bias=False),
+    BatchNormalization(),
+    ReLU(),
+    DoReFa_Affine(10),
+    BatchNormalization()
+])
