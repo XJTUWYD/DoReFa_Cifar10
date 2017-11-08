@@ -15,12 +15,17 @@ tensorflow version 1.2.1
 ## Training
 
 * Train cifar10 model using gpu:
+
  Full presion:
- 	python main_full.py     
+
+ 	python main_full.py  
+   
  if you want to train your own DoReFanet
+
 	python main_for_DoReFa.py
 
  Dorefanet:
+
 	weight: 1 bit output:2 bits
 	epoches: 100
 	learning rate:0.001
@@ -47,6 +52,7 @@ BNN:
 
 
 * Train cifar10 model using cpu:
+
  if you did not own a GPU which can speed up the training, you just need to change the GPU in main.py into True
 
 ## Results
