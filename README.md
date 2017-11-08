@@ -19,6 +19,7 @@ tensorflow version 1.2.1
  	python main_full.py     
  if you want to train your own DoReFanet
 	python main_for_DoReFa.py
+
  Dorefanet:
 	weight: 1 bit output:2 bits
 	epoches: 100
